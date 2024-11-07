@@ -4,7 +4,7 @@ return {
     dependencies = {
         "MunifTanjim/nui.nvim",
     },
-    config = function ()
+    config = function()
         local neotree = require("neo-tree")
         local neotreecmd = require("neo-tree.command")
         neotree.setup({
@@ -17,8 +17,8 @@ return {
                 filesystem = {
                     bind_to_cwd = true,
                     follow_current_file = { enabled = true },
-                    use_libuv_file_watcher = true
-                }
+                    use_libuv_file_watcher = true,
+                },
             },
             window = {
                 mappings = {
@@ -28,7 +28,7 @@ return {
                 fuzzy_finder_mappings = {
                     ["<C-j>"] = "move_cursor_down",
                     ["<C-k>"] = "move_cursor_up",
-                }
+                },
             },
             -- event_handlers = {
             --     {
@@ -42,7 +42,7 @@ return {
             -- }
         })
         vim.keymap.set("n", "<C-n>", function()
-            neotreecmd.execute({toggle = true, reveal = true})
-        end)
-    end
+            neotreecmd.execute({ toggle = true, reveal = true })
+        end, { desc = "Toggle file explorer (Neotree)" })
+    end,
 }

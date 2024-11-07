@@ -8,6 +8,7 @@ return {
             "nvim-telescope/telescope-fzf-native.nvim",
             build = "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
         },
+        "folke/todo-comments.nvim",
     },
 
     config = function()
@@ -28,8 +29,8 @@ return {
                         ["<C-Up>"] = actions.cycle_history_prev,
                         ["<C-l>"] = actions.preview_scrolling_right,
                         ["<C-h>"] = actions.preview_scrolling_left,
-                        ["<M-l>"] = actions.results_scrolling_right,
-                        ["<M-h>"] = actions.results_scrolling_left,
+                        ["<Right>"] = actions.results_scrolling_right,
+                        ["<Left>"] = actions.results_scrolling_left,
                         ["<C-n>"] = actions.cycle_previewers_next,
                         ["<C-p>"] = actions.cycle_previewers_prev,
                     }
@@ -52,6 +53,7 @@ return {
         -- Other pickers
         keymap.set("n", "<leader>fh", builtin.help_tags, {desc = "Find Help"})
         keymap.set("n", "<leader>fk", builtin.keymaps, {desc = "Find Keymap"})
+        keymap.set("n", "<leader>fd", "<cmd>TodoTelescope<CR>", {desc = "Find TODOs"})
 
         -- LSP pickers
         keymap.set("n", "<leader>fs", builtin.lsp_workspace_symbols, {desc = "Find Symbols in current project"})
@@ -60,7 +62,7 @@ return {
         keymap.set("n", "<leader>gt", builtin.lsp_type_definitions, {desc = "Go to definition of the Type under cursor"})
 
         -- Git pickers
-        keymap.set("n", "<leader>fg", builtin.git_files, {desc = "Find files in Git"})
+        keymap.set("n", "<leader>gf", builtin.git_files, {desc = "Find files in Git"})
         keymap.set("n", "<leader>fgc", builtin.git_commits, {desc = "Find Git Commits"})
         keymap.set("n", "<leader>fgbc", builtin.git_bcommits, {desc = "Find Git Buffer's Commits"})
         keymap.set("n", "<leader>fgb", builtin.git_branches, {desc = "Find Git Branch"})
