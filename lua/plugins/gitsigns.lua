@@ -3,8 +3,8 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     opts = {
         current_line_blame = true,
-        linehl = true,
-        word_diff = true,
+        -- linehl = true,
+        -- word_diff = true,
         numhl = true,
         on_attach = function(bufnr)
             local gs = package.loaded.gitsigns
