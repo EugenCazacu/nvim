@@ -14,6 +14,7 @@ return {
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("UserLspConfig", {}),
             callback = function(ev)
+                vim.lsp.set_log_level("off")
                 local opts = { buffer = ev.buf, silent = true }
                 -- set keybinds
                 opts.desc = "Show LSP references"
