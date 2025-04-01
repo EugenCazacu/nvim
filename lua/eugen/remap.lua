@@ -36,6 +36,11 @@ keymap.set("n", "<leader>cp", ":cprevious<CR>", { desc = "Previous item in quick
 
 keymap.set("n", "<leader>x", ":!chmod +x %<CR>", { desc = "Make current file executable (chmod +x)." })
 
+keymap.set("n", "<leader>fp", ':let @" = expand("%")<CR>', { desc = 'Yank file path to @"' })
+keymap.set("n", "<leader>tr", function()
+    vim.opt.relativenumber = not vim.opt.relativenumber:get()
+end, { desc = "Toggle relativenumber for line numbers" })
+
 -- TODO:
 -- keymap.set("n", "<leader>c", ":e ~/setup/cheat_sheet.txt<CR>")
 keymap.set("n", "<leader>v", ":e ~/.config/nvim/lua/eugen<CR>", { desc = "Open nvim config folder." })
