@@ -33,6 +33,7 @@ return {
                         ["<Left>"] = actions.results_scrolling_left,
                         ["<C-n>"] = actions.cycle_previewers_next,
                         ["<C-p>"] = actions.cycle_previewers_prev,
+                        ["<C-s>"] = actions.select_horizontal,
                     }
                 }
             }
