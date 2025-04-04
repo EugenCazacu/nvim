@@ -41,6 +41,8 @@ keymap.set("n", "<leader>tr", function()
     vim.opt.relativenumber = not vim.opt.relativenumber:get()
 end, { desc = "Toggle relativenumber for line numbers" })
 
+keymap.set("t", "<ESC>", "<C-\\><C-n>", { desc = "Esc in terminal mode" })
+
 -- TODO:
 -- keymap.set("n", "<leader>c", ":e ~/setup/cheat_sheet.txt<CR>")
 keymap.set("n", "<leader>v", ":e ~/.config/nvim/lua/eugen<CR>", { desc = "Open nvim config folder." })
