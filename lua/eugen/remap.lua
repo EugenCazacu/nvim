@@ -43,6 +43,10 @@ end, { desc = "Toggle relativenumber for line numbers" })
 
 keymap.set("t", "<ESC>", "<C-\\><C-n>", { desc = "Esc in terminal mode" })
 
-keymap.set("n", "<leader>cs", ":e ~/setup/cheat_sheet.txt<CR>", { desc = "Open cheat sheet" })
+keymap.set(
+    "n",
+    "<leader>cs",
+    ":split " .. os.getenv("HOME") .. "/setup/cheat_sheet.txt<CR>",
+    { desc = "Open cheat sheet" }
+)
 keymap.set("n", "<leader>v", ":e ~/.config/nvim/lua<CR>", { desc = "Open nvim config folder." })
---keymap.set("n", "<leader>b", ":e ~/setup/bashrc<CR>")
