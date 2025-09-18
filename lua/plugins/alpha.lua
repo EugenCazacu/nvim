@@ -19,7 +19,7 @@ return {
 
         -- Set menu
         dashboard.section.buttons.val = {
-            dashboard.button("SPC wr", "󰁯  > Restore Session For Current Directory", "<cmd>SessionRestore<CR>"),
+            dashboard.button("SPC wr", "󰁯  > Restore Session For Current Directory", "<cmd>AutoSession restore<CR>"),
             dashboard.button("q", "  > Quit NVIM", "<cmd>qa<CR>"),
             dashboard.button("<C-n>", "  > Toggle file explorer", "<cmd>Neotree<CR>"),
             dashboard.button("SPC ff", "󰱼  > Find File", "<cmd>Telescope find_files<CR>"),
